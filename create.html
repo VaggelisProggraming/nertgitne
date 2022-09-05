@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/n.png" type="image/x-icon">
+    <title>nertgine</title>
+</head>
+<body>
+    <div class="topnav">
+        <a  href="index.html"><img src="./images/nertgine.png" alt="nertgine"></a>
+        <a class="active" href="create.html">Create Activity</a>
+        <a href="see.html">See Activities</a>
+        <a href="account.html">Account</a>
+    </div>
+    <br><br>
+    <button><a href="createWeek.html">Enter Weeks</a></button>
+    <br><br>
+    <div class="info">↓  Enter the information below  ↓</div>
+    <br><br><br><br>
+    <div class="info">
+        <input type="text" placeholder="Activity Name" id="Name">
+        <br><br>
+        <input type="text" placeholder="activity type" id="type">
+        <br><br>
+        <input type="text" placeholder="distance" id="distance">
+        <br><br>
+        <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="discription" id="discription"></textarea>            
+        <br><br>
+        <input type="text" placeholder="gear" id="gear">
+        <br><br>
+        Enter time
+        <br>
+        <input type="text" title="time?" id="time">
+        <br><br><br><br>
+        <!-- <p id='demo' style='display: none'>Hello Javascript</p>      -->
+        <br><br>
+        <p id='demo' class='AdvancedOptions'>
+            <input type="number" placeholder="Avg Heart Rate" id="AvgHR">
+            <br><br>
+            <input type="number" placeholder="Max Heart Rate" id="MaxHR">            
+            <br><br><br>
+            <input type="number" placeholder="Calories burned" id="Kcal">
+            <br><br><br>
+            
+        </p>
+        <button type='button' onclick="toggleText()">advanded</button>
+        <br><br><br><br>
+        <button class="submit" onclick="storeIt()">Submit everything</button>
+    </div>
+    <script>
+        function toggleText() {
+             var text = document.getElementById("demo");
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            } else {
+            text.style.display = "none";
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

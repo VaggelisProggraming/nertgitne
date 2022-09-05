@@ -1,0 +1,151 @@
+::selection {
+  background: #ffae00; /* WebKit/Blink Browsers */
+  color: black;
+}
+
+
+html,
+body {
+    background-color: rgb(57, 56, 56);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.topnav {
+    position: relative;
+    bottom: 7.1px;
+    top: 00%;
+    overflow: hidden;
+    background-color: #ffae00;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    height: 30px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  
+  .topnav a.active {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+.advanced {
+  font-family: Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.AdvancedOptions {
+  display: none;
+}
+
+.desc {
+  width: 150px;
+  height: 100px;
+}
+
+.info {
+  text-align: center;
+  font-weight: 900;
+}
+
+.SeeInfo {
+  justify-content: center;
+  font-weight: 900;
+  text-align: center;
+  width: 700px;
+  background-image: url(./images/duathlon.bmp);
+}
+
+.AllInfo {
+  position: relative;
+  top: 50%;
+  bottom: 50%;
+}
+
+#parent {
+  margin: auto;
+  width: 60%;
+}
+
+
+.name {
+  text-align: center;
+}
+
+.OneLine {
+  display: flex;
+}
+
+.NoShow {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+.NoShow::selection {
+  content: ""; 
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  background-color: orange;
+  border: 0px;
+  border-radius: 12px;
+}
+
+.submit {
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  background-color: orange;
+  border: 0px;
+ }
+
+account {
+  position: relative;
+  left: 35%;
+  right: 65%;
+}
+
+.parent {
+  text-align: center;
+}
+
+.textBasicStyle {
+  font-weight: 900;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: rgba(0, 0, 0, 0); 
+  color: orange;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.indoor {
+  float: center;
+  width: 500px;
+  text-align: center;
+
+}
+
+ul {
+  color: orange;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+} 
