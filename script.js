@@ -1,52 +1,39 @@
 function storeIt() {
-    console.log('stored')
+    let data = {
+        NameActivity: document.getElementById("Name").value,
+        TypeActivity: document.getElementById("type").value,
+        distance: document.getElementById("distance").value,
+        discription: document.getElementById("discription").value,
+        gear: document.getElementById("gear").value,
+        time: document.getElementById("time").value,
+        AvgHR: document.getElementById("AvgHR").value,
+        MaxHR: document.getElementById("MaxHR").value,
+        Kcal: document.getElementById("Kcal").value,
+        datetimeCreated: new Date().toISOString()
+    };
 
-
-    var input = document.getElementById("Name").value;
-    localStorage.setItem("NameActivity", input);
-
-    var input = document.getElementById("type").value;
-    localStorage.setItem("TypeActivity", input);
-    
-    var input = document.getElementById("distance").value;
-    localStorage.setItem("distance", input);
-    
-    
-    var input = document.getElementById("discription").value;
-    localStorage.setItem("discription", "None");
-    if(localStorage.getItem("discription") === "") {
-        localStorage.setItem("discription", "None");
-    }
-    
-    else {
-        var input = document.getElementById("discription").value;
-        localStorage.setItem("discription", input);
-    }
-    
-    var input = document.getElementById("gear").value;
-    localStorage.setItem("gear", input);
-    
-    var input = document.getElementById("time").value;
-    localStorage.setItem("Time", input);
-    
-    var input = document.getElementById("AvgHR").value;
-    localStorage.setItem("AverigeHR", input);
-    
-    var input = document.getElementById("MaxHR").value;
-    localStorage.setItem("MaximumHR", input);
-    
-    var input = document.getElementById("Kcal").value;
-    localStorage.setItem("Calories", input);
-    
-    
-
+    let oldData = JSON.parse(localStorage.getItem("activities"));
+    let array = oldData || [];
+    array.push(JSON.stringify(data));
+    localStorage.setItem("activities", JSON.stringify(array));
+    console.log('stored');
 }
 
-document.getElementById("type").innerHTML = localStorage.getItem("NameActivity");
-document.getElementById("distance").innerHTML = localStorage.getItem("distance");
-document.getElementById("discription").innerHTML = localStorage.getItem("discription");
-document.getElementById("gear").innerHTML = localStorage.getItem("gear");
-document.getElementById("time").innerHTML = localStorage.getItem("Time");
-document.getElementById("AvgHR").innerHTML = localStorage.getItem("AverigeHR");
-document.getElementById("MaxHR").innerHTML = localStorage.getItem("MaximumHR");
-document.getElementById("Kcal").innerHTML = localStorage.getItem("Calories");
+function getIt() {
+    let oldData = JSON.parse(localStorage.getItem("activities"));
+    let array = oldData || [];
+    const container = document.getElementById("parent");
+
+    for (let i = 0; i < array.length; i++) {
+        let data = JSON.parse(array[i]);
+        console.log(data);
+        for (let key in data) {
+            console.log(key + " : " + data[key]);
+            let div = document.createElement("div");
+            div.innerHTML = key + " : " + data[key];
+            container.appendChild(div);
+        }
+        container.appendChild(document.createElement("hr"));
+    }
+    console.log('fetched data.');
+}
