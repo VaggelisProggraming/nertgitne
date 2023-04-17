@@ -13,21 +13,27 @@ function storeIt() {
     };
 
     let oldData = JSON.parse(localStorage.getItem("activities"));
-
     let array = oldData || [];
-
     array.push(JSON.stringify(data));
-
     localStorage.setItem("activities", JSON.stringify(array));
-
     console.log('stored');
 }
 
-document.getElementById("type").innerHTML = localStorage.getItem("NameActivity");
-document.getElementById("distance").innerHTML = localStorage.getItem("distance");
-document.getElementById("discription").innerHTML = localStorage.getItem("discription");
-document.getElementById("gear").innerHTML = localStorage.getItem("gear");
-document.getElementById("time").innerHTML = localStorage.getItem("Time");
-document.getElementById("AvgHR").innerHTML = localStorage.getItem("AverigeHR");
-document.getElementById("MaxHR").innerHTML = localStorage.getItem("MaximumHR");
-document.getElementById("Kcal").innerHTML = localStorage.getItem("Calories");
+function getIt() {
+    let oldData = JSON.parse(localStorage.getItem("activities"));
+    let array = oldData || [];
+    const container = document.getElementById("parent");
+
+    for (let i = 0; i < array.length; i++) {
+        let data = JSON.parse(array[i]);
+        console.log(data);
+        for (let key in data) {
+            console.log(key + " : " + data[key]);
+            let div = document.createElement("div");
+            div.innerHTML = key + " : " + data[key];
+            container.appendChild(div);
+        }
+        container.appendChild(document.createElement("hr"));
+    }
+    console.log('fetched data.');
+}
