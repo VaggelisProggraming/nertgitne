@@ -1,45 +1,26 @@
 function storeIt() {
-    console.log('stored')
+    let data = {
+        NameActivity: document.getElementById("Name").value,
+        TypeActivity: document.getElementById("type").value,
+        distance: document.getElementById("distance").value,
+        discription: document.getElementById("discription").value,
+        gear: document.getElementById("gear").value,
+        time: document.getElementById("time").value,
+        AvgHR: document.getElementById("AvgHR").value,
+        MaxHR: document.getElementById("MaxHR").value,
+        Kcal: document.getElementById("Kcal").value,
+        datetimeCreated: new Date().toISOString()
+    };
 
+    let oldData = JSON.parse(localStorage.getItem("activities"));
 
-    var input = document.getElementById("Name").value;
-    localStorage.setItem("NameActivity", input);
+    let array = oldData || [];
 
-    var input = document.getElementById("type").value;
-    localStorage.setItem("TypeActivity", input);
-    
-    var input = document.getElementById("distance").value;
-    localStorage.setItem("distance", input);
-    
-    
-    var input = document.getElementById("discription").value;
-    localStorage.setItem("discription", "None");
-    if(localStorage.getItem("discription") === "") {
-        localStorage.setItem("discription", "None");
-    }
-    
-    else {
-        var input = document.getElementById("discription").value;
-        localStorage.setItem("discription", input);
-    }
-    
-    var input = document.getElementById("gear").value;
-    localStorage.setItem("gear", input);
-    
-    var input = document.getElementById("time").value;
-    localStorage.setItem("Time", input);
-    
-    var input = document.getElementById("AvgHR").value;
-    localStorage.setItem("AverigeHR", input);
-    
-    var input = document.getElementById("MaxHR").value;
-    localStorage.setItem("MaximumHR", input);
-    
-    var input = document.getElementById("Kcal").value;
-    localStorage.setItem("Calories", input);
-    
-    
+    array.push(JSON.stringify(data));
 
+    localStorage.setItem("activities", JSON.stringify(array));
+
+    console.log('stored');
 }
 
 document.getElementById("type").innerHTML = localStorage.getItem("NameActivity");
